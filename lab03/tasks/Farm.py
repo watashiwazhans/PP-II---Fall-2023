@@ -13,9 +13,9 @@
     print(numlegs, fourth_step)
 solve("The number of rabbits :", "The number of chickens :")
 '''
-def puzzle(numheads, numlegs):
+def solve(numheads, numlegs):
 
-    rabbits = int((numlegs-70)/2)
+    rabbits = int((numlegs - 35 * 2) / 2)
     chickens = int(numheads - rabbits)
 
     return rabbits, chickens
@@ -23,4 +23,4 @@ def puzzle(numheads, numlegs):
 numheads = int(input())
 numlegs = int(input())
 
-print(puzzle(numheads, numlegs))
+print(solve(numheads, numlegs))

@@ -1,1 +1,5 @@
-def isPrime(filter_prime)
+from math import *
+
+def isPrime():
+    a = int(input())
+    
