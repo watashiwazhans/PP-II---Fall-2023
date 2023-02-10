@@ -1,0 +1,1 @@
+def isPrime(filter_prime)
