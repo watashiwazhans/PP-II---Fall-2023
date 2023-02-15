@@ -1,0 +1,6 @@
+b = int(input())
+h = int(input())
+area = float(h * b)
+print("Length of base:", b)
+print("Height of parallelogram:", h)
+print("Expected Output:", area) 
