@@ -1,2 +1,2 @@
 import re
-pattern_5 = re.compile(r"a.+b\Z")
+pattern_6 = re.compile(r"[ ,.]")
