@@ -6,6 +6,7 @@ is_ball = True
 pg.init()
 screen = pg.display.set_mode((600,600))
 clock = pg.time.Clock()
+pg.display.set_caption("Ball task")
 
 while not done:
     for event in pg.event.get():
@@ -28,4 +29,9 @@ while not done:
         pg.draw.circle(screen, color, (x, y), rad)
         pg.display.flip()
         clock.tick(60)
+        #boundaries
+        if x < 30 : x+=30
+        elif x > 600 - 10: x -= 30
+        elif y < 30: y += 30
+        elif y > 600 - 10: y -= 30
         
