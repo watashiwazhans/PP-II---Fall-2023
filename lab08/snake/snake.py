@@ -9,9 +9,9 @@ is_running, lose = True, False
 clock = pg.time.Clock()
 score = pg.font.SysFont("Verdana", 20)
 surf = pg.Surface((390, 390), pg.SRCALPHA)
-bg = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\img\\background.jpg")
+bg = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\background.jpg")
 bg = pg.transform.scale(bg, (w, h))
-gameover = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\img\\game_over.jpg")
+gameover = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\game_over.jpg")
 gameover = pg.transform.scale(gameover, (390, 390))
 
 class Food:
@@ -19,7 +19,7 @@ class Food:
         # задаем рандомные координаты для еды в диапазоне игрового поля с шагом в 40
         self.x = randrange(0, w, step)
         self.y = randrange(0, h, step)
-        self.pic = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\img\\cherry.png")
+        self.pic = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\cherry.png")
 
     def draw(self):
         screen.blit(self.pic, (self.x, self.y))
@@ -87,7 +87,7 @@ class Snake:
 class Wall:
     def __init__(self, x, y):
         self.x, self.y = x, y
-        self.pic = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\img\\wall.png")
+        self.pic = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab08\\snake\\wall.png")
 
 
     def draw(self):
