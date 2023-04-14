@@ -9,7 +9,6 @@ screen = pg.display.set_mode((w, h))
 pg.display.set_caption('Music Player')
 clock = pg.time.Clock()
 is_sing, begin = False, False
-
 background_img = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab07\\music player\\img\\2.jpg")
 image = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab07\\music player\\img\\1.png")
 image = pg.transform.scale(image, (450, 600))
@@ -17,16 +16,7 @@ surf_1 = pg.Surface((380, 55))
 global i 
 i, vol = 0, 1
 global musics
-
-def get_image(path):
-  global _image_library
-  image = _image_library.get(path)
-  if image is None:
-    _path = path.replace('/', os.sep).replace('\\', os.sep)
-    image = pg.image.load(_path)
-    _image_library[path] = image
-  return image
-
+ #playlist
 def load_music():
     songs = []
     list_of_music = os.listdir(r'C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab07\\music player\\playlist\\')
@@ -36,7 +26,7 @@ def load_music():
     return songs
 
 musics = load_music()
-
+ #listening to music
 while is_running:
     clock.tick(fps)
     for event in pg.event.get():
@@ -83,7 +73,7 @@ while is_running:
             if event.key == pg.K_q: # stop music and exit player
                 pg.mixer.music.stop()
                 is_running = False
-                
+            
     font = pg.font.SysFont('Tahoma', 19, True) 
     font1 = pg.font.SysFont('Tahoma', 15, False) 
     screen.fill('white')
