@@ -8,7 +8,7 @@ screen = pg.display.set_mode((w, h))
 pg.display.set_caption('Mickey Clock')
 clock = pg.time.Clock()
 
-
+#for the angle 
 def convert(time):
     return 360 - time * 6
 

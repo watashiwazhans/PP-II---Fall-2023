@@ -70,7 +70,7 @@ class Snake:
     def collide_food(self, f:Food):
         if self.body[0][0] == f.x and self.body[0][1] == f.y: # если координаты головы змейки совпадают с координатами еды
             self.score += 1
-            self.body.append([1000, 1000]) 
+            self.body.append([self.body[0][0], self.body[0][1]]) 
     
     # заканчиваем игру, если голова змейки столкнеться со своим телом
     def self_collide(self):

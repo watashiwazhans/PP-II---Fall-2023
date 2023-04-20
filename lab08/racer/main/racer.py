@@ -83,7 +83,6 @@ enemies.add(e)
 
 coins = pg.sprite.Group()
 coins.add(c)
-
 # запускаем основной цикл
 while is_running:
     clock.tick(fps)
@@ -108,10 +107,8 @@ while is_running:
             score_coin += 1
             new = Coin() # заново создаем объект монетки
             coins.add(new) # добавляем новый объект в массив монеток
-
     e.draw(screen)
     p.draw(screen)
-
     # цикл "game over"
     while lose:
         clock.tick(fps)

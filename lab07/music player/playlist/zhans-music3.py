@@ -9,6 +9,7 @@ screen = pg.display.set_mode((w, h))
 pg.display.set_caption('Music Player')
 clock = pg.time.Clock()
 is_sing, begin = False, False
+#загружаем вид плеера 
 background_img = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab07\\music player\\img\\2.jpg")
 image = pg.image.load("C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab07\\music player\\img\\1.png")
 image = pg.transform.scale(image, (450, 600))
@@ -73,7 +74,7 @@ while is_running:
             if event.key == pg.K_q: # stop music and exit player
                 pg.mixer.music.stop()
                 is_running = False
-            
+    #шрифты названии песен
     font = pg.font.SysFont('Tahoma', 19, True) 
     font1 = pg.font.SysFont('Tahoma', 15, False) 
     screen.fill('white')
