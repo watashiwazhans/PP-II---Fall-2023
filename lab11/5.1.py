@@ -4,13 +4,14 @@ from psycopg2 import Error
 del_name = input()
 try:
     # Подключиться к существующей базе данных
-    connection = psycopg2.connect(
-        host='localhost', 
-        database='postgres',
-        user='postgres',
-        password='sadaa197688630'
-    )
-
+    data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
+    }
+    connection = psycopg2.connect(**data)
     cursor = connection.cursor()
     cursor.execute('CALL delete_user(%s)', (del_name,))
     connection.commit()

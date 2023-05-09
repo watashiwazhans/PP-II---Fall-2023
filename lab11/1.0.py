@@ -1,12 +1,13 @@
 import psycopg2
- 
-config = psycopg2.connect(
-    host = 'localhost',
-    database = 'postgres',
-    password = 'sadaa197688630',
-    user = 'postgres'
-)
+data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
 
+}
+config = psycopg2.connect(**data)
 config.autocommit = True
 cursor = config.cursor()
   

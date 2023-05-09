@@ -2,13 +2,15 @@ import pygame as pg
 import psycopg2
 from random import randint, randrange, choice
 name = input() # вводим имя перед началом игры
+data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
 
-config = psycopg2.connect(
-    host = 'localhost',
-    database = 'postgres',
-    password = 'sadaa197688630',
-    user = 'postgres'
-)
+}
+config = psycopg2.connect(**data)
 current = config.cursor()
 
 sql = '''
@@ -157,7 +159,7 @@ while is_running:
     screen.blit(bg, (0, 0))
 
     # прорисовываем стенки с помощью заранее написанных паттернов  
-    my_walls = open(f'wall{level}.txt', 'r').readlines() # читает каждую линию как отдельный лист
+    my_walls = open(f'C:\\Users\\Lenovo\\OneDrive\\Рабочий стол\\PP II\\lab10\\wall{level}.txt', 'r').readlines() # читает каждую линию как отдельный лист
     walls = []
     for i, line in enumerate(my_walls): # проходимся по индексу и строке
         for j, each in enumerate(line): # проходимся по каждому элементу в строке
@@ -180,7 +182,6 @@ while is_running:
 
     # условие для перехода на следующий уровень
     if s.score >= 3:
-        pg.mixer.Sound('./music/nextlevel.mp3').play()
         level += 1 # увеличиваем уровень
         level %= 4 
         fps += 2 # увеличиваем скорость
@@ -195,9 +196,6 @@ while is_running:
 
         if s.body[0][0] == wall.x and s.body[0][1] == wall.y: # останавливаем игру, если голова змейки столкнеться со стенкой
             lose = True
-            pg.mixer.music.stop()
-            pg.mixer.Sound('./music/gameover.wav').play()
-            pg.mixer.music.stop()
 
     if rush == True: # если мы съедаем еду, она заново перерисовывается и она заново будет стоять 5 секунд
         timmer = 5000

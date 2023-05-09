@@ -2,12 +2,15 @@ import psycopg2
 from psycopg2 import Error
 
 try:
-    connection = psycopg2.connect(
-        host='localhost', 
-        database='postgres',
-        user='postgres',
-        password='sadaa197688630'
-    )
+    data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
+
+    }
+    connection = psycopg2.connect(**data)
 
     cursor = connection.cursor()
     # хранимая процедура
@@ -24,3 +27,5 @@ finally:
     if connection:
         cursor.close()
         connection.close()
+#select * from phonebook order by id desc
+#select * from phonebook order by 

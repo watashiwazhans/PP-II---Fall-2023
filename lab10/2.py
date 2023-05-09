@@ -1,17 +1,18 @@
 import psycopg2
-
-config = psycopg2.connect(
-    host='localhost', 
-    database='postgres',
-    user='postgres',
-    password='sadaa197688630'
-)
+data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
+}
+config = psycopg2.connect(**data)
 
 current = config.cursor()
 # добавляем значения в таблицу 
-id = 1
-name = 'Daniar'
-number = '87774659300'
+id = 3
+name = 'Darina'
+number = '87071213596'
 
 sql = '''
     INSERT INTO phonebook VALUES (%s, %s, %s); 

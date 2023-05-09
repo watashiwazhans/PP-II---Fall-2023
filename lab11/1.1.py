@@ -3,12 +3,15 @@ from psycopg2 import Error
 
 def create_func(query):
     try:
-        connection = psycopg2.connect(
-            host='localhost', 
-            database='postgres',
-            user='postgres',
-            password='sadaa197688630'
-            )
+        data = {
+        'host' : 'localhost',
+        'database' : 'postgres',
+        'user' : 'postgres',
+        'password' : "grief/0xTi",
+        'port' : 22031
+
+        }
+        connection = psycopg2.connect(**data)
         cursor = connection.cursor()
         cursor.execute(query)
         connection.commit()

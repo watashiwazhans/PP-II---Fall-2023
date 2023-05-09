@@ -3,13 +3,16 @@ from psycopg2 import Error
 
 new_id, new_name, new_number = int(input()), input(), input() 
 
-try: 
-    connection = psycopg2.connect( 
-        host='localhost',  
-        database='postgres', 
-        user='postgres', 
-        password='sadaa197688630' 
-    ) 
+try:
+    data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
+
+    } 
+    connection = psycopg2.connect(**data) 
  
     cursor = connection.cursor() 
     cursor.execute('CALL add_user(%s, %s, %s)', (new_id, new_name, new_number)) 

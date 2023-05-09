@@ -1,13 +1,14 @@
 import psycopg2
-# создаем таблицу телефонной книги
-config = psycopg2.connect(
-    host = 'localhost',
-    database = 'postgres',
-    password = 'sadaa197688630',
-    user = 'postgres'
-)
 
-current = config.cursor()
+data = {
+    'host' : 'localhost',
+    'database' : 'postgres',
+    'user' : 'postgres',
+    'password' : "grief/0xTi",
+    'port' : 22031
+
+}
+
 sql = '''
         CREATE TABLE phonebook(
             id INTEGER PRIMARY KEY,
@@ -15,8 +16,12 @@ sql = '''
             number VARCHAR(12)
     );
 '''
-current.execute(sql)
 
-current.close()
-config.commit()
-config.close()
+db = psycopg2.connect(**data)
+cursor = db.cursor()
+
+cursor.execute(sql)
+
+cursor.close()
+db.commit()
+db.close()

@@ -15,7 +15,7 @@ sql1 = '''
 '''
 # запрос номера телефона определенного человека 
 sql2 = '''
-    SELECT number FROM phonebook WHERE name = 'Mama'
+    SELECT number FROM phonebook WHERE name = 'Mom'
 '''
 current.execute(sql2)
 
